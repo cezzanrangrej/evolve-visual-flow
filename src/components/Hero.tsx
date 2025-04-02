@@ -37,43 +37,26 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto px-6 z-10">
-        <div className="flex flex-col items-center gap-12">
-          {/* 3D Visual Representation */}
-          <div className={`w-full max-w-4xl transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-            <div className="relative glassmorphism rounded-xl p-4 md:p-6">
-              <img 
-                src="/lovable-uploads/8414a3ec-f27d-4830-86cf-c8dbf6e05892.png" 
-                alt="Document Processing Pipeline" 
-                className="w-full rounded-lg shadow-xl"
-              />
-              
-              {/* Annotations */}
-              <div className="absolute top-[15%] right-[15%] text-white bg-black bg-opacity-70 px-3 py-1 rounded-lg text-sm md:text-base">
-                our web app processing work
-              </div>
-              
-              <div className="absolute bottom-[25%] left-[10%] text-white bg-black bg-opacity-70 px-3 py-1 rounded-lg text-sm md:text-base">
-                output in different lanes
-              </div>
-              
-              <div className="absolute bottom-[10%] right-[30%] text-white bg-black bg-opacity-70 px-3 py-1 rounded-lg text-sm md:text-base">
-                document input
-              </div>
-              
-              {/* Call to action buttons below the visual */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                <Link to="/get-started" className="gradient-btn flex items-center justify-center">
-                  Get Started <ArrowRight className="ml-2" size={18} />
-                </Link>
-                <Link to="/services" className="px-8 py-3 rounded-md text-white border border-white border-opacity-20 hover:border-opacity-50 transition-all duration-300 text-center">
-                  Learn More
-                </Link>
-              </div>
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className={`w-full lg:w-1/2 space-y-8 transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+              Seamless Document <span className="text-transparent bg-clip-text bg-version-gradient">Transformation.</span>
+            </h1>
+            <p className="text-xl text-gray-300">
+              Upload, Select Versions, and Get Your Report Instantly.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/get-started" className="gradient-btn flex items-center justify-center">
+                Get Started <ArrowRight className="ml-2" size={18} />
+              </Link>
+              <Link to="/services" className="px-8 py-3 rounded-md text-white border border-white border-opacity-20 hover:border-opacity-50 transition-all duration-300 text-center">
+                Learn More
+              </Link>
             </div>
           </div>
           
           {/* Upload and Transform Section */}
-          <div className={`w-full lg:w-2/3 transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
+          <div className={`w-full lg:w-1/2 transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
             <div className="glassmorphism rounded-xl p-6 md:p-8">
               <h3 className="text-xl md:text-2xl font-bold mb-6 text-white">
                 Transform Your Documents
