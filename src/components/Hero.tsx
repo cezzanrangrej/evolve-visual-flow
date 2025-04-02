@@ -1,5 +1,7 @@
 
 import { useEffect, useState } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,100 +37,77 @@ const Hero = () => {
       </div>
       
       <div className="container mx-auto px-6 z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
-          <div className={`space-y-6 transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
-            <h2 className="text-2xl md:text-3xl font-bold text-white">3D Document Processing Visualization</h2>
-            
-            <div className="space-y-4 text-gray-300">
-              <p className="text-lg">
-                Interactive visualization of our document transformation pipeline
-              </p>
-              
-              <div className="space-y-2">
-                <h3 className="text-xl text-white font-semibold">Scene Components:</h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>
-                    <span className="text-versionBlue font-medium">Input Stage</span>
-                    <p className="text-sm text-gray-400">3D document entering from left with subtle glow</p>
-                  </li>
-                  <li>
-                    <span className="text-versionBlue font-medium">Processing Hub</span>
-                    <p className="text-sm text-gray-400">Transparent chamber with rotating gears and data streams</p>
-                  </li>
-                  <li>
-                    <span className="text-versionBlue font-medium">Versioning Lanes</span>
-                    <p className="text-sm text-gray-400">Neon pathways for different output versions</p>
-                  </li>
-                  <li>
-                    <span className="text-versionBlue font-medium">Output Stage</span>
-                    <p className="text-sm text-gray-400">3D platforms displaying output files with preview thumbnails</p>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="space-y-2">
-                <h3 className="text-xl text-white font-semibold">Interactions:</h3>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li>
-                    <span className="text-green-500">✓</span> Hover over version lanes to highlight pathways
-                  </li>
-                  <li>
-                    <span className="text-green-500">✓</span> Camera motion with parallax effect
-                  </li>
-                  <li>
-                    <span className="text-green-500">✓</span> Futuristic lighting & reflections
-                  </li>
-                  <li>
-                    <span className="text-green-500">✓</span> GSAP integration for smooth transitions
-                  </li>
-                </ul>
-              </div>
+        <div className="flex flex-col lg:flex-row items-center gap-12">
+          <div className={`w-full lg:w-1/2 space-y-8 transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+              Seamless Document <span className="text-transparent bg-clip-text bg-version-gradient">Transformation.</span>
+            </h1>
+            <p className="text-xl text-gray-300">
+              Upload, Select Versions, and Get Your Report Instantly.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/get-started" className="gradient-btn flex items-center justify-center">
+                Get Started <ArrowRight className="ml-2" size={18} />
+              </Link>
+              <Link to="/services" className="px-8 py-3 rounded-md text-white border border-white border-opacity-20 hover:border-opacity-50 transition-all duration-300 text-center">
+                Learn More
+              </Link>
             </div>
           </div>
           
-          {/* Interactive 3D Visualization Placeholder */}
-          <div className={`transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
-            <div className="glassmorphism rounded-xl aspect-[4/3] p-4 relative overflow-hidden">
-              <div className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 px-2 py-1 rounded text-xs text-white">
-                Interactive 3D
-              </div>
+          {/* Upload and Transform Section */}
+          <div className={`w-full lg:w-1/2 transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
+            <div className="glassmorphism rounded-xl p-6 md:p-8">
+              <h3 className="text-xl md:text-2xl font-bold mb-6 text-white">
+                Transform Your Documents
+              </h3>
               
-              {/* Simulated 3D Scene - Will be replaced by actual Three.js */}
-              <div className="relative w-full h-full bg-gradient-to-br from-[#0F172A] to-[#0F1F3D] rounded-lg overflow-hidden">
-                {/* Input Document */}
-                <div className="absolute left-5 top-1/2 transform -translate-y-1/2 w-12 h-16 bg-white rounded animate-pulse-slow flex items-center justify-center">
-                  <div className="w-8 h-10 border-t-2 border-gray-400"></div>
+              <div className="space-y-6">
+                {/* Software Selection */}
+                <div>
+                  <label className="block text-gray-300 mb-2">Select Software Type</label>
+                  <select className="form-input">
+                    <option value="">Choose Software</option>
+                    <option value="word">Microsoft Word</option>
+                    <option value="pdf">PDF Document</option>
+                    <option value="markdown">Markdown</option>
+                    <option value="excel">Microsoft Excel</option>
+                  </select>
                 </div>
                 
-                {/* Processing Cube */}
-                <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 border-2 border-versionBlue rounded-lg rotate-45 animate-pulse flex items-center justify-center">
-                  <div className="w-16 h-16 border-2 border-purple-500 rounded-md animate-spin-slow"></div>
+                {/* File Upload */}
+                <div>
+                  <label className="block text-gray-300 mb-2">Upload Your Document</label>
+                  <div className="border-2 border-dashed border-gray-500 rounded-lg p-6 text-center cursor-pointer hover:border-versionBlue transition-colors">
+                    <p className="text-gray-300">Drag & Drop or Click to Upload</p>
+                  </div>
                 </div>
                 
-                {/* Output Paths */}
-                <div className="absolute top-1/4 right-10 w-16 h-4 bg-gradient-to-r from-versionBlue to-transparent rounded-full animate-pulse-fast"></div>
-                <div className="absolute top-1/2 right-10 w-16 h-4 bg-gradient-to-r from-green-500 to-transparent rounded-full animate-pulse-fast"></div>
-                <div className="absolute bottom-1/4 right-10 w-16 h-4 bg-gradient-to-r from-purple-500 to-transparent rounded-full animate-pulse-fast"></div>
+                <div className="flex flex-col md:flex-row gap-4 md:items-end">
+                  <div className="flex-1">
+                    <label className="block text-gray-300 mb-2">
+                      Current Version 
+                      <span className="ml-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
+                        Detected: v2.1
+                      </span>
+                    </label>
+                    <input type="text" className="form-input" readOnly value="Version 2.1" />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <label className="block text-gray-300 mb-2">Target Version</label>
+                    <select className="form-input">
+                      <option value="3.0">Version 3.0</option>
+                      <option value="2.5">Version 2.5</option>
+                      <option value="2.0">Version 2.0 (Downgrade)</option>
+                    </select>
+                  </div>
+                </div>
                 
-                {/* Labels */}
-                <div className="absolute top-1/4 right-5 text-white text-xs bg-black bg-opacity-50 px-1 rounded">
-                  PDF v1.0
-                </div>
-                <div className="absolute top-1/2 right-5 text-white text-xs bg-black bg-opacity-50 px-1 rounded">
-                  DOCX 2007
-                </div>
-                <div className="absolute bottom-1/4 right-5 text-white text-xs bg-black bg-opacity-50 px-1 rounded">
-                  Markdown v2.1
-                </div>
+                <button className="w-full py-3 rounded-md bg-versionBlue text-white font-semibold hover:bg-opacity-90 transition-colors">
+                  Get Report
+                </button>
               </div>
-              
-              <div className="absolute bottom-4 left-4 text-xs text-gray-300">
-                Powered by Three.js & GSAP
-              </div>
-            </div>
-            
-            <div className="mt-4 text-center text-sm text-gray-400">
-              This visualization demonstrates how our system processes and transforms documents into different versioned outputs.
             </div>
           </div>
         </div>
