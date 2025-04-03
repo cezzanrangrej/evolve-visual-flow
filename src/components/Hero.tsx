@@ -1,4 +1,3 @@
-
 import { useEffect, useState, useRef } from 'react';
 import * as THREE from 'three';
 import { gsap } from 'gsap';
@@ -221,10 +220,10 @@ const Hero = () => {
       
       <div className="container mx-auto px-6 z-10">
         <div className={`transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}`}>
-          {/* 3D Document Processing Visualization */}
+          {/* Document Processing Visualization */}
           <div className="w-full flex flex-col items-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center text-white">
-              <span className="text-transparent bg-clip-text bg-version-gradient">3D Document Processing</span>
+              <span className="text-transparent bg-clip-text bg-version-gradient">Document Processing</span>
             </h1>
             
             {/* Three.js Container */}
